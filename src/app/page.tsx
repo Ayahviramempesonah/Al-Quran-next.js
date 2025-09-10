@@ -7,7 +7,7 @@ export default function Home() {
     <section>
       <h1>Bacalah Al-Quran</h1>
       <ListSurah />
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 }

@@ -33,10 +33,10 @@ export default async function DetailAyat({
   const { id } = await params;
   const { data } = await GetSurah(id);
   return (
-    <div>
+    <div className="">
       <h1>Nomor Surat:{id}</h1>
-      <p>{data.namaLatin}</p>
-      <div className="space-y-4 ">
+      <p>Nama Surah:{data.namaLatin}</p>
+      <div className="space-y-4  rounded-md border ">
         {/* {data.ayat.map((ayat: Ayat) => ( */}
         {/*   <div key={ayat.nomorAyat} className="border-b  p-4 m-2"> */}
         {/*     <h1 className="text-right rtl mb-2  text-teal-700 text-xl  p-2"> */}

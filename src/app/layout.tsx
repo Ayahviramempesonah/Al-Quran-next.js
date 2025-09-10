@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Noto_Sans_Arabic, Noto_Naskh_Arabic } from "next/font/google";
+import Footer from "./components/footer";
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -37,9 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoNaskhArabic.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoNaskhArabic.className} bg-gray-100 antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

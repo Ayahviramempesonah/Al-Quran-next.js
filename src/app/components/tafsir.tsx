@@ -60,28 +60,32 @@ export default function Tarsir({
   };
 
   return (
-    <div className="border-b-teal-400 p-4 m-2 rounded ">
-      <h1 className="text-right rtl mb-2 text-teal-700 text-xl p-2 ">
-        {ayat.teksArab}
-      </h1>
-      <p className="text-sm text-gray-600">
-        {ayat.nomorAyat},{ayat.teksLatin}
-      </p>
-      <p className="text-sm">Artinya: &quot;{ayat.teksIndonesia}&quot;</p>
-      <button
-        onClick={handleTafsirClick}
-        className="border bg-blue-400 p-1 m-2 rounded hover:bg-blue-500 transition-colors"
-      >
-        {showTafsir ? "Sembunyikan Tafsir" : "Tampilkan Tafsir"}
-      </button>
+    <div className="border-b-teal-400  m-2  rounded border-md bg-linear-65 from-cyan-500 to-blue-500 ">
+      <div className="bg-linear-65 from-violet-500 to-fuchsia-500 border-md rounded-md">
+        <h1 className="text-right rtl mb-2  text-xl p-2 ">{ayat.teksArab}</h1>
+        <p className="text-sm text-gray-600">
+          {ayat.nomorAyat},{ayat.teksLatin}
+        </p>
+        <p className="text-sm">Artinya: &quot;{ayat.teksIndonesia}&quot;</p>
+        <button
+          onClick={handleTafsirClick}
+          className="border bg-blue-400 p-1 m-2 rounded hover:bg-blue-500 transition-colors"
+        >
+          {showTafsir ? "Sembunyikan Tafsir" : "Tampilkan Tafsir"}
+        </button>
 
-      {showTafsir && (
-        <div className="">
-          {isLoading && <p>Memuat Tafsir...</p>}{" "}
-          {error && <p className="text-red-500">{error}</p>}
-          {tafsir && <p className="text-sm bg-gray-800">{tafsir}</p>}
-        </div>
-      )}
+        {showTafsir && (
+          <div className="">
+            {isLoading && <p>Memuat Tafsir...</p>}{" "}
+            {error && <p className="text-red-500">{error}</p>}
+            {tafsir && (
+              <p className="text-sm bg-linear-65 from-cyan-500 to-blue-500">
+                {tafsir}
+              </p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
